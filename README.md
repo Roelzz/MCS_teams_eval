@@ -1,80 +1,136 @@
 # teams-eval
 
-> **Channel-parity evaluation for Microsoft Copilot Studio agents.**
-> Prove that your agent answers the **same in Microsoft Teams** as it does in the **test pane**
-> (Direct-to-Engine), across a whole testset — and catch the cases where it doesn't.
+**Catch Microsoft Copilot Studio regressions that only appear after publishing to Teams.**
 
-Built on **[Inspect AI](https://inspect.aisi.org.uk/)**. Drive it from the command line or a
-single-page **Reflex** web app.
+[![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Inspect AI](https://img.shields.io/badge/Inspect_AI-evaluation-6f42c1)](https://inspect.aisi.org.uk/)
+[![Reflex](https://img.shields.io/badge/Reflex-web_app-111827)](https://reflex.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
----
+Run the **same testset** through the Copilot Studio test-pane engine and the **real published Teams
+channel**. `teams-eval` pinpoints where answers diverge in wording, meaning, citations, adaptive
+cards, or suggested actions — before users find the regression.
 
-## Why this exists
+<p align="center">
+  <img src="assets/screenshots/results.png" alt="Teams Parity dashboard comparing Direct and Teams responses" width="100%">
+</p>
 
-A Copilot Studio agent that behaves perfectly in the **test pane** can behave differently once it's
-published to **Microsoft Teams** — different system context, different rendering (HTML vs plain),
-truncated or reordered answers, missing citations/cards, or topics that simply fire differently. The
-test pane is *not* a faithful preview of the Teams experience.
+> Built on [Inspect AI](https://inspect.aisi.org.uk/) with a CLI for automation and a Reflex web app
+> for setup, execution, diagnosis, and export.
 
-`teams-eval` runs the **same prompts through both channels** and tells you, prompt by prompt, whether
-the answers agree — on text, on meaning, and on structured content (citations, adaptive cards,
-suggested actions). It's a **regression and parity harness** for the "does my published Teams agent
-match what I tested?" question.
+## The problem it solves
 
-- **Direct (Direct-to-Engine / D2E)** — the programmatic stand-in for the test pane, via the
-  `microsoft-agents-copilotstudio-client` SDK.
-- **Teams** — the real published channel, driven through the Microsoft Graph chat API.
+The Copilot Studio test pane is not the Teams runtime. Publishing can introduce different system
+context, rendering, topic selection, message ordering, or structured content. An answer that looked
+correct during authoring can arrive in Teams truncated, reformatted, missing a citation, or changed
+entirely.
 
----
+`teams-eval` turns that uncertainty into a repeatable release gate:
 
-## Features
+| Question | Evidence produced |
+|---|---|
+| Did Teams return the same answer as the test pane? | Normalized text, semantic, and structured-content comparison |
+| Is a difference meaningful or only formatting? | Word-level diff plus an optional LLM judge explanation |
+| Did Teams drop citations, cards, or suggested actions? | Independent structured-part checks |
+| Is the agent stable across repeated runs? | Configurable repeats and agreement thresholds |
+| Does the answer still satisfy the expected outcome? | Optional per-channel quality grading |
+| Can I compare several agents before a rollout? | Parallel multi-agent runs with one combined dashboard |
 
-- **Dual-channel evaluation** — every prompt is sent to **both** Teams and Direct; one response per
-  channel per turn (Teams can emit several messages per turn — they're concatenated into one answer).
-- **Three comparison layers**, each independently toggleable:
-  1. **Normalized text** — strip HTML → plain, unescape, collapse whitespace, lowercase, exact match.
-  2. **Semantic** — an LLM judge decides whether the two answers *mean* the same thing.
-  3. **HTML / structured** — body text plus structured parts: **citations**, **adaptive cards**,
-     **suggested actions**.
-- **Configurable match policy** — choose which layers must agree for a prompt to count as a "match".
-- **Repeats + agreement threshold** — run each prompt N times and require a fraction of agreement, to
-  absorb non-deterministic answers.
-- **Quality grading (optional)** — grade each channel's answer against an expected `target` with the
-  judge model.
-- **Deterministic mode** — turn the LLM judge off to compare **normalized text only**. No
-  OpenAI/Foundry key required — just answer *"do Teams and Direct differ or not?"*.
-- **Multi-agent runs** — evaluate one testset against several agents in parallel (each agent has its
-  own Teams chat, so it's safe), capped by `MAX_PARALLEL_AGENTS`.
-- **Reflex web app** — setup, agents, testsets, settings, running evals, and the parity dashboard in
-  one UI on `http://localhost:2009`.
-- **Channel-difference dashboard** — side-by-side Direct vs Teams with a **word-level diff**, per-layer
-  badges, structured-part chips, an All / Differences / Matches filter, and CSV/HTML export.
-- **One-command Entra provisioning** — `setup_app.py` creates (or extends) the app registration with
-  the right Graph + Power Platform delegated scopes and grants admin consent.
-- **One sign-in, two audiences** — a single interactive browser login primes both Microsoft Graph
-  (Teams) and Power Platform (Direct), so eval runs acquire tokens silently and never block mid-run.
-- **Robust by design** — hard per-channel timeouts, sequential pacing of the shared Teams chat,
-  Graph throttle handling, and a self-healing token cache.
+Use it for pre-release validation, regression testing after topic or knowledge changes, Teams
+deployment smoke tests, and evidence-backed conversations with makers or platform teams.
+
+## What you get
+
+- **Real dual-channel execution** — every prompt goes to Direct-to-Engine and the actual 1:1 Teams
+  chat. Multi-message Teams replies are collected into one turn response.
+- **Three independent comparison layers** — normalized text, semantic meaning, and HTML/structured
+  content including citations, adaptive cards, and suggested actions.
+- **Deterministic mode** — disable the LLM judge and run strict normalized-text parity checks with no
+  OpenAI or Foundry key.
+- **Non-determinism controls** — repeat cases and require a configurable agreement fraction instead
+  of trusting a single run.
+- **Actionable diagnostics** — inspect transcripts, filter differences, review word-level deltas,
+  and export CSV plus standalone HTML reports.
+- **One UI for the full workflow** — configure authentication, manage agents and testsets, launch
+  runs, watch progress, and investigate results at `http://localhost:2009`.
+- **Automation-ready CLI** — use the same evaluation engine locally or in a release workflow.
+- **Operational safeguards** — sequential Teams pacing, Graph throttle handling, per-channel
+  timeouts, cancellation, and a self-healing token cache.
+
+## Product tour
+
+### 1. Configure both channels
+
+Paste Copilot Studio diagnostics and a Teams chat link, provision or extend the Entra app
+registration, then sign in once for both Microsoft Graph and Power Platform.
+
+<p align="center">
+  <img src="assets/screenshots/setup.png" alt="Teams Parity setup page with agent, app registration, and sign-in steps" width="100%">
+</p>
+
+### 2. Run one testset against one or more agents
+
+Choose the agents, testset, judge mode, and Teams pacing. Agents run in parallel while each Teams
+conversation remains sequential to prevent response cross-talk.
+
+<p align="center">
+  <img src="assets/screenshots/run.png" alt="Teams Parity run configuration page" width="100%">
+</p>
+
+### 3. Investigate the exact difference
+
+See Direct and Teams side by side, inspect the word-level delta, identify which comparison layer
+failed, filter to regressions, and export the evidence.
+
+<p align="center">
+  <img src="assets/screenshots/results.png" alt="Teams Parity results dashboard" width="100%">
+</p>
 
 ---
 
 ## How it works
 
-```
-testset.json ──▶ Inspect dataset
-                     │
-        dual_channel solver ──┬─▶ Direct  (D2E SDK)         ─┐
-                              └─▶ Teams   (Graph API)        ─┤  one response per channel
-                                                              │
-        channel_diff scorer ◀─────────────────────────────────┘
-          ├─ normalized-text exact
-          ├─ semantic (model judge)
-          └─ HTML / structured (citations, cards, suggested actions)
-                     │
-        metrics + inspect view + side-by-side CSV/HTML report
+```mermaid
+flowchart LR
+    T["Testset JSON"] --> I["Inspect AI dataset"]
+    I --> S["Dual-channel solver"]
+    S --> D["Direct-to-Engine<br/>Copilot Studio SDK"]
+    S --> M["Microsoft Teams<br/>Graph chat API"]
+    D --> C["Channel comparison"]
+    M --> C
+    C --> N["Normalized text"]
+    C --> J["Semantic judge"]
+    C --> H["Structured content<br/>citations · cards · actions"]
+    N --> R["Metrics + dashboard + CSV/HTML"]
+    J --> R
+    H --> R
 ```
 
 A prompt and **all** the bot messages it produces are treated as **one turn / one response**.
+
+```mermaid
+sequenceDiagram
+    actor Evaluator
+    participant Harness as teams-eval
+    participant Direct as Direct-to-Engine
+    participant Teams as Published Teams agent
+    participant Judge as Optional LLM judge
+
+    Evaluator->>Harness: Run agent + testset
+    loop Every prompt and repeat
+        Harness->>Direct: Send prompt
+        Harness->>Teams: Send the same prompt
+        Direct-->>Harness: Test-pane response
+        Teams-->>Harness: One or more Teams messages
+        Harness->>Harness: Normalize text and extract structure
+        opt Semantic or quality grading enabled
+            Harness->>Judge: Compare meaning / expected outcome
+            Judge-->>Harness: Grade + explanation
+        end
+        Harness->>Harness: Apply match policy and threshold
+    end
+    Harness-->>Evaluator: Dashboard, Inspect log, CSV, HTML
+```
 
 ### Comparison layers in detail
 
@@ -93,18 +149,34 @@ compared against the per-case `agreement_threshold` (default `DEFAULT_AGREEMENT_
 
 ## Prerequisites
 
-- **Python 3.12** and the **[uv](https://docs.astral.sh/uv/)** package manager.
-- A **Microsoft Entra (Azure AD) tenant** where you can create an app registration and grant admin
-  consent — or an admin who will. The app needs **delegated** scopes on two APIs:
-  | API | Scopes | Used for |
-  |-----|--------|----------|
-  | Microsoft Graph | `Chat.ReadWrite`, `ChatMessage.Send` | Teams channel |
-  | Power Platform API | `CopilotStudio.Copilots.Invoke` (+ `user_impersonation`) | Direct channel |
-- A **published Copilot Studio agent** reachable through **both** channels:
-  - **Direct** — its Copilot Studio **environment ID** + **agent schema name** (e.g. `cr1bd_myAgent`).
-  - **Teams** — a **1:1 Teams chat link** with the agent (`...` → *Copy link*).
-- **Optional** — an **OpenAI** or **Azure AI Foundry / Azure OpenAI** key, only for the *semantic* and
-  *quality* layers. Deterministic (text-only) runs need no key.
+```mermaid
+flowchart TB
+    Dev["Evaluator workstation<br/>Python 3.12 + uv"] --> App["teams-eval"]
+
+    Entra["Microsoft Entra tenant<br/>app registration + admin consent"] --> Graph["Microsoft Graph delegated<br/>Chat.ReadWrite<br/>ChatMessage.Send"]
+    Entra --> PP["Power Platform delegated<br/>CopilotStudio.Copilots.Invoke<br/>user_impersonation"]
+
+    Agent["Published Copilot Studio agent"] --> Direct["Direct coordinates<br/>environment ID + schema name"]
+    Agent --> Teams["Teams coordinates<br/>1:1 agent chat link"]
+
+    Graph --> App
+    PP --> App
+    Direct --> App
+    Teams --> App
+
+    Judge["Optional judge provider<br/>OpenAI or Azure AI Foundry"] -. "semantic + quality only" .-> App
+```
+
+| Requirement | Why it is needed |
+|---|---|
+| **Python 3.12** and [uv](https://docs.astral.sh/uv/) | Run the evaluation engine, CLI, and Reflex app |
+| **Microsoft Entra tenant** with app-registration and consent rights | Create delegated authentication for Graph and Power Platform |
+| **Microsoft Graph delegated scopes** `Chat.ReadWrite`, `ChatMessage.Send` | Send prompts and read replies in the actual Teams chat |
+| **Power Platform delegated scopes** `CopilotStudio.Copilots.Invoke` and `user_impersonation` | Invoke the same Copilot Studio agent through Direct-to-Engine |
+| **Published Copilot Studio agent** | The target must be available through both Direct and Teams |
+| **Environment ID + agent schema name** | Identify the Direct-to-Engine target; the bot GUID is not the schema name |
+| **1:1 Teams agent chat link** | Identify the real published Teams conversation |
+| **Optional OpenAI or Azure AI Foundry model** | Required only for semantic comparison and quality grading |
 
 See **[SETUP.md](SETUP.md)** for the full app-registration walkthrough (automated and manual) and for
 how to find the Teams chat ID.
@@ -140,7 +212,15 @@ agent's Direct coordinates and Teams chat link:
 }
 ```
 
-**3. Run a parity eval** (the `--model` is the **judge** for the semantic/quality layers):
+**3. Sign in once** to prime both Microsoft Graph and Power Platform tokens:
+
+```bash
+uv run python auth.py
+```
+
+You can also do this from the **Sign in** step in the web app.
+
+**4. Run a parity eval** (the `--model` is the **judge** for the semantic/quality layers):
 
 ```bash
 uv run inspect eval channel_eval.py --model openai/gpt-4o \
@@ -150,8 +230,7 @@ uv run inspect view                   # Inspect's results UI (transcripts, score
 uv run python report.py --open        # purpose-built parity dashboard (CSV + HTML) in reports/
 ```
 
-> The first eval triggers an interactive browser sign-in (priming both audiences); tokens are then
-> cached and reused silently.
+Tokens are cached locally and reused silently by subsequent runs.
 
 ### Deterministic run — no LLM judge, no key
 
@@ -268,10 +347,20 @@ only user turns are sent. `target` (optional) is the criteria the quality grader
 | `MAX_PARALLEL_AGENTS` | `3` | Cap on agents evaluated in parallel. |
 | `LOG_LEVEL` / `LOG_FILE` | `INFO` / `logs/teams-eval.log` | Logging (rotating file sink). |
 
-> **Already handled for you:** `agents.json` (real tenant/environment/Teams IDs), `.env`, the token
-> cache, `logs/`, `reports/`, and Reflex runtime dirs are all **git-ignored**. The committed
-> `agents.example.json` documents the structure — a fresh clone copies it to `agents.json` (or adds
-> agents via the web app). Nothing sensitive is tracked.
+## Security and data handling
+
+- Authentication uses **delegated user permissions**; the tool does not require a client secret.
+- The token cache stays local and is excluded from Git.
+- Real agent coordinates live in the Git-ignored `agents.json`; the repository only includes
+  `agents.example.json`.
+- `.env`, eval logs, generated reports, uploaded files, Reflex state, and local databases are all
+  excluded from Git by default.
+- Prompts and responses are sent only to the configured Microsoft channels and, when enabled, the
+  configured judge provider.
+- Deterministic mode keeps comparison local after the two channel responses are collected.
+
+Review your organization's data-handling policy before sending production or sensitive prompts to an
+external judge model.
 
 ---
 
