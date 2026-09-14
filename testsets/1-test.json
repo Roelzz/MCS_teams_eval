@@ -1,0 +1,23 @@
+{
+  "name": "1-test",
+  "cases": [
+    {
+      "id": "q1",
+      "input": "How many working days must a vacancy be posted internally before it is advertised externally?",
+      "target": "",
+      "tags": []
+    },
+    {
+      "id": "q2",
+      "input": "What information must every job posting include?",
+      "target": "",
+      "tags": []
+    },
+    {
+      "id": "q3",
+      "input": "How many working days must a vacancy be posted internally before it is advertised externally?",
+      "target": "",
+      "tags": []
+    }
+  ]
+}

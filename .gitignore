@@ -1,0 +1,34 @@
+.states
+assets/external/
+.web
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Env & secrets
+.env
+.local_token_cache.json
+# Real agent coordinates (tenant/env/Teams IDs) — commit agents.example.json instead
+agents.json
+
+# Inspect AI logs
+logs/
+*.eval
+
+# Reports
+reports/
+
+# Reflex
+.web/
+.states/
+*.db
+reflex.db
+reflex.lock
+uploaded_files/
+
+# OS
+.DS_Store

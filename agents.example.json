@@ -1,0 +1,22 @@
+{
+  "my-agent": {
+    "description": "Example agent — copy this file to agents.json and replace the placeholders.",
+    "direct": {
+      "environment_id": "00000000-0000-0000-0000-000000000000",
+      "agent_identifier": "cr1bd_myAgent"
+    },
+    "teams": {
+      "chat_link": "https://teams.cloud.microsoft/l/chat/19:00000000-0000-0000-0000-000000000000_00000000-0000-0000-0000-000000000000@unq.gbl.spaces/conversations?context=%7B%22contextType%22%3A%22chat%22%7D"
+    }
+  },
+  "another-agent": {
+    "description": "Register multiple agents; 'chat_id' is an alternative to 'chat_link'.",
+    "direct": {
+      "environment_id": "00000000-0000-0000-0000-000000000000",
+      "agent_identifier": "cr1bd_anotherAgent"
+    },
+    "teams": {
+      "chat_id": "19:00000000-0000-0000-0000-000000000000_00000000-0000-0000-0000-000000000000@unq.gbl.spaces"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "smoke",
+  "cases": [
+    {
+      "id": "s1",
+      "input": "Tell me you like pancakes please",
+      "target": "",
+      "tags": []
+    },
+    {
+      "id": "s2",
+      "input": "What are your opening hours on Saturday?",
+      "target": "",
+      "tags": []
+    },
+    {
+      "id": "s3",
+      "input": "Say hello in one short sentence.",
+      "target": "",
+      "tags": []
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "name": "teams-context-saturation",
+  "cases": [
+    {
+      "id": "t01_probe",
+      "input": "Hi! What time do you open on Saturday?",
+      "target": "Reply is a short, warm Northwind front-desk answer to the question. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "probe",
+        "footer"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t02_payload_x2",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t03_payload_x3",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t04_probe",
+      "input": "Remind me, what booking reference do I quote?",
+      "target": "Reply is a short, warm Northwind front-desk answer to the question, and it states the booking reference is ZEPHYR-4. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "probe",
+        "reference"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t05_payload_x4",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t06_payload_x5",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t07_probe",
+      "input": "Where do I wait for the 2 pm garden tour?",
+      "target": "Reply is a short, warm Northwind front-desk answer to the question. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "probe",
+        "footer"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t08_payload_x6",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t09_payload_x7",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t10_probe",
+      "input": "One more time -- what's the booking reference?",
+      "target": "Reply is a short, warm Northwind front-desk answer to the question, and it states the booking reference is ZEPHYR-4. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "probe",
+        "reference"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t11_payload_x8",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t12_payload_x9",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long itinerary in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "payload",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "t13_probe",
+      "input": "Quick: are dogs allowed in the garden?",
+      "target": "Reply is a short, warm Northwind front-desk answer to the question. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "saturation",
+        "probe",
+        "footer"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    }
+  ]
+}

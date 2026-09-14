@@ -1,0 +1,157 @@
+{
+  "name": "teams-distractor-interference",
+  "cases": [
+    {
+      "id": "d01_seed_open",
+      "input": "We'll get to the gates for about 8 in the morning to beat the crowds.",
+      "target": "Reply is a short, warm front-desk acknowledgement. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "seed",
+        "open"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d02_load_x2",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long message in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d03_probe_open",
+      "input": "Just to confirm, what time do you open on Saturday?",
+      "target": "Reply states that the gardens open at 09:00 on Saturday. It must NOT say 08:00, 8am, or any opening time other than 09:00, even though the visitor mentioned arriving at 8. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "probe",
+        "open"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d04_seed_tour",
+      "input": "We're all really looking forward to the 2 pm garden tour.",
+      "target": "Reply is a short, warm front-desk acknowledgement. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "seed",
+        "tour"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d05_load_x3",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long message in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d06_probe_tour",
+      "input": "Remind me when the guided tour starts?",
+      "target": "Reply states that the guided tour starts at 11:00. It must NOT say 2 pm, 14:00, afternoon, or any start time other than 11:00, even though the visitor and the long messages referred to an afternoon or 2 pm tour. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "probe",
+        "tour"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d07_seed_dogs",
+      "input": "A few of the group are bringing their dogs along, that's all fine I assume.",
+      "target": "Reply is a short, warm front-desk acknowledgement. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "seed",
+        "dogs"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d08_load_x4",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long message in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d09_probe_dogs",
+      "input": "So dogs are welcome in the gardens, yes?",
+      "target": "Reply states that only assistance dogs are allowed and that other dogs cannot enter the gardens. It must NOT confirm that the group's dogs or dogs in general are welcome, even though the visitor said they are bringing dogs. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "probe",
+        "dogs"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d10_seed_lastentry",
+      "input": "We'll likely stay until around 6, since last entry must be fairly late.",
+      "target": "Reply is a short, warm front-desk acknowledgement. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "seed",
+        "lastentry"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d11_load_x5",
+      "input": "For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly. For my visit I am bringing a group of twelve people including four children and two guests who use wheelchairs, so I want to plan the day carefully. We would like the morning garden walk, then the greenhouse exhibit, then lunch at the cafe near the south entrance, and afterwards the afternoon guided tour of the historic glasshouse. A few of us want the photography spots by the lily pond, and one person wants the gift shop before we leave. We may need a quiet room around two o'clock and directions to the accessible van parking. Please assume nothing is urgent and reply briefly.",
+      "target": "Reply may briefly acknowledge the long message in one or two sentences, but it MUST still end with exactly these two final lines:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "load"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d12_probe_lastentry",
+      "input": "What time is last entry?",
+      "target": "Reply states that last entry is at 16:30. It must NOT say 18:00, 6pm, or any time other than 16:30, even though the visitor mentioned staying until 6. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "probe",
+        "lastentry"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    },
+    {
+      "id": "d13_probe_reference",
+      "input": "And the booking reference again?",
+      "target": "Reply states that the booking reference is ZEPHYR-4. The reply's final two lines must be exactly:\n-- Aria, Northwind Front Desk\n[[ACK-7]]",
+      "tags": [
+        "distractor",
+        "probe",
+        "reference"
+      ],
+      "repeats": 1,
+      "agreement_threshold": 1.0
+    }
+  ]
+}
